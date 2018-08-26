@@ -13,6 +13,8 @@ class Home extends Component {
       <Link to = {`/login`}>Login</Link>
       <Link to = {`/register`}>Register</Link>
       <Link to = {`/my-recipes`}>My Recipes</Link>
+      <Link to = {`/search`}>Search</Link>
+
       </nav>
 
 

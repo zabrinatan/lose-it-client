@@ -7,10 +7,11 @@ body {
 
 .box {
   display:inline-block;
-  margin: 30px;
+  width: 15%;
+  margin: 2%;
 }
 .recipe-image {
-  width:50px;
+  width:100%;
 
 }
 

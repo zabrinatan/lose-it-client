@@ -9,14 +9,14 @@ import RecipeSearch from './components/RecipeSearch';
 import MyRecipes from './components/MyRecipes'
 import Login from './components/Login'
 import Register from './components/Register'
-
+import RecipePlanning from './components/RecipePlanning';
 
 const Routes = (
   <Router>
     <div>
       <Route exact path = "/" component = {Home} />
       <Route exact path = '/search' component = {RecipeSearch} />
-      <Route exact path = '/my-recipes' component = {MyRecipes} />
+      <Route exact path = '/my-recipes' component = {RecipePlanning} />
       <Route exact path = '/login' component = {Login} />
       <Route exact path = '/register' component = {Register} />
 

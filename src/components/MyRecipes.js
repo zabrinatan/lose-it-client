@@ -31,13 +31,12 @@ componentDidMount(){
       {this.state.favourites.map((item)=> {
         return <div className="box">
         <div className="recipe-image">
-        <a href= {item.url} target= "_blank"><img src = {item.image}/></a>
+      <img src = {item.image}/>
         </div>
         <div className="recipe-label">{item.label}</div>
         </div>
       })}
 
-      <Mealplan />
       </div>
     )
   }
