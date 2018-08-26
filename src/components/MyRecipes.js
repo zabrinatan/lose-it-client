@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Mealplan from './Mealplan'
 
 const SERVER_MY_RECIPES = "http://localhost:3000/recipes.json"
 class MyRecipes extends Component {
@@ -35,6 +36,8 @@ componentDidMount(){
         <div className="recipe-label">{item.label}</div>
         </div>
       })}
+
+      <Mealplan />
       </div>
     )
   }

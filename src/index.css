@@ -13,3 +13,18 @@ body {
   width:50px;
 
 }
+
+table, td {
+  border: 2px solid black;
+}
+
+table {
+  width: 70%;
+  display: block;
+  margin: 0 auto;
+}
+td {
+  width: 3%;
+  text-align: center;
+  height: 5vh;
+}

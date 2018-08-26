@@ -41,14 +41,6 @@ _handleSubmit(e) {
   })
 }
 
-// const fetchUsers = () => {
-//       axios.get(SERVER_URL + 'users.json').then(result => {
-//         console.log(result);
-//         this.setState({ users: result.data.users })
-//       })
-//     }
-//
-//     fetchUsers();
 
   render(){
     return (
