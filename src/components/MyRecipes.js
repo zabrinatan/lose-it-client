@@ -7,6 +7,7 @@ import Header from './Header'
 const SERVER_MEALPLAN = "http://localhost:3000/mealplans/addmeal"
 const SERVER_MY_RECIPES = "http://localhost:3000/recipes.json"
 const SERVER_MY_MEALPLANS = "http://localhost:3000/mealplans.json"
+const SERVER_DESTROY_MEALPLAN = "http://localhost:3000/mealplans"
 class MyRecipes extends Component {
   constructor(){
     super();
@@ -68,6 +69,7 @@ componentDidMount(){
            data.map((item)=> {
              if(item.meal === "Breakfast"){
                if(item.day === "Sunday"){
+
                  this.setState ({
                    SundayBreakfast: item.recipe
                  })
@@ -173,6 +175,9 @@ _onSubmit(e){
 }
 
 _onClick(day, meal, e){
+  const id = e.target.id;
+  const targetId = document.getElementById(id);
+
   this.setState({
     meal: meal,
     day: day
@@ -188,11 +193,21 @@ _onClick(day, meal, e){
              "Authorization": localStorage.getItem('jwt')
            }
     })
-  } else {
-    alert('click more times, idiots')
   }
 
-  window.location.reload();
+  if(targetId.innerHTML !== ""){
+    axios.post(SERVER_DESTROY_MEALPLAN, {
+          meal: meal,
+          day: day,
+          recipe: ""
+        }, {headers: {
+                     "Authorization": localStorage.getItem('jwt')
+                   }
+            } )
+  }
+
+
+  window.location.reload()
 
 }
 
@@ -213,7 +228,7 @@ _handleClick(label, e){
         <div className="recipe-image">
       <img src = {item.image}/>
         </div>
-        <div classNam e="recipe-label">{item.label}</div>
+        <div className="recipe-label">{item.label}</div>
         </div>
       })}
       <table>
