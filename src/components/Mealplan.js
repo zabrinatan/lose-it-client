@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 class Mealplan extends Component {
+  constructor(){
+    super();
+    this.state ={
+    }
+  }
   render(){
     return(
       <div>
@@ -29,6 +34,7 @@ class Mealplan extends Component {
               <td></td>
               <td></td>
               <td></td>
+
             </tr>
             <tr>
             <td>Lunch</td>

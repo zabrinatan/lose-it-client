@@ -3,6 +3,7 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 // import Home from './components/Home';
 // import FAQ from './components/FAQ';
 // import Character from './components/Character'
+import { createBrowserHistory } from 'history'
 
 import Home from './components/Home';
 import RecipeSearch from './components/RecipeSearch';
@@ -10,6 +11,8 @@ import MyRecipes from './components/MyRecipes'
 import Login from './components/Login'
 import Register from './components/Register'
 import RecipePlanning from './components/RecipePlanning';
+
+export const history = createBrowserHistory()
 
 const Routes = (
   <Router>

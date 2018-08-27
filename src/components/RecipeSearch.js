@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Header from './Header'
+
 
 const SERVER_RECIPE_SAVE = "http://localhost:3000/recipes"
 const SERVER_RECIPE_CALL ='http://localhost:3000/recipes/apicall';
@@ -37,16 +39,24 @@ _handleQuery(e){
 
 _handleClick(e){
   const currentTargetId = e.target.id
-  console.log(currentTargetId)
   e.preventDefault();
 axios.post(SERVER_RECIPE_SAVE,{
-  data: this.state.response[currentTargetId]
-})
+  data: this.state.response[currentTargetId],
+
+},
+{headers: {
+         "Authorization": localStorage.getItem('jwt')
+       }
+}
+)
 
 }
   render(){
     return(
+      <div>
+      <Header />
       <div onSubmit = {this._handleSubmit}>
+
       <form>
       <input type="Search" placeholder="Search" required onChange = {this._handleQuery}/>
 
@@ -59,6 +69,7 @@ axios.post(SERVER_RECIPE_SAVE,{
       })}
 
 
+      </div>
       </div>
     )
   }
