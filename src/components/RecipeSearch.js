@@ -38,8 +38,10 @@ _handleQuery(e){
 }
 
 _handleClick(e){
+    e.preventDefault();
   const currentTargetId = e.target.id
-  e.preventDefault();
+const currentButton = document.getElementById(currentTargetId)
+currentButton.innerHTML = "Added to My Recipes"
 axios.post(SERVER_RECIPE_SAVE,{
   data: this.state.response[currentTargetId],
 
