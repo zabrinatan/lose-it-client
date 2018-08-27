@@ -38,6 +38,7 @@ _handleQuery(e){
 }
 
 _handleClick(e){
+  console.log(this.state.response)
     e.preventDefault();
   const currentTargetId = e.target.id
 const currentButton = document.getElementById(currentTargetId)
@@ -65,7 +66,7 @@ axios.post(SERVER_RECIPE_SAVE,{
       </form>
 
       {this.state.response.map((item, index)=> {
-        return <div className="box"><div className="recipe-image"><img src = {item.recipe.image}/></div> <div className="recipe-label">{item.recipe.label}</div>
+        return <div className="box-search"><div className="recipe-image"><img src = {item.recipe.image}/></div> <div className="recipe-label">{item.recipe.label}</div>
         <button id = {index} onClick={this._handleClick}>Add to Favorites</button>
         </div>
       })}

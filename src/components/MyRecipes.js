@@ -40,7 +40,7 @@ class MyRecipes extends Component {
       SaturdayDinner: ""
     }
     this._onSubmit = this._onSubmit.bind(this)
-
+    this.onRecipeClick = this.onRecipeClick.bind(this)
   }
 componentDidMount(){
 
@@ -217,20 +217,46 @@ _handleClick(label, e){
   })
 }
 
+onRecipeClick(e){
+  // document.getElementById("result-list").innerHTML = ""
+
+  const targetId =  document.getElementById(e.target.id)
+  const targetRecipeId = targetId.innerHTML;
+  const targetRecipe = document.getElementById(targetRecipeId);
+  console.log(targetRecipe);
+  targetRecipe.style.display = "inline-block"
+
+
+}
+
 
   render(){
     return(
       <div>
       <Header />
       <h1>My Saved Recipes </h1>
+
+      <div id="side-bar">
+
+      {this.state.favourites.map((item, index)=> {
+          return <p onClick = {this.onRecipeClick} id= {index}>{item.label}</p>
+      })
+    }
+
+      </div>
+      <div id = "result-list">
       {this.state.favourites.map((item, index)=> {
         return <div className="box" id={item.label} onClick = {this._handleClick.bind(this, item.label)}>
-        <div className="recipe-image">
-      <img src = {item.image}/>
+        <div id= "overlay">Calories: {parseFloat(item.calories).toFixed(2)}Kj
+        <button>View Recipe</button>
         </div>
+
+      <img className="recipe-image" src = {item.image}/>
+
         <div className="recipe-label">{item.label}</div>
         </div>
       })}
+      </div>
       <table>
         <thead>
         <tr>

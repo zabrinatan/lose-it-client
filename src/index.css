@@ -4,17 +4,68 @@ body {
   font-family: sans-serif;
 }
 
-
+#result-list {
+  width: 80%;
+  /* border: 1px solid black; */
+  margin: 0 auto;
+  /* visibility: hidden; */
+  display: inline-block;
+}
 .box {
-  display:inline-block;
-  width: 15%;
-  margin: 2%;
-}
-.recipe-image {
-  width:100%;
+  /* display:inline-block; */
+  width: 25%;
+  margin: 0 2%;
+  display: none;
+  /* height: 100%; */
+/* border: 1px solid black; */
 
 }
 
+.box-search {
+  width: 25%;
+  margin: 0 2%;
+  display: inline-block;
+}
+
+#result-list #overlay {
+  width: 20%;
+  /* height: 10%; */
+  z-index: 3;
+/* cursor: pointer; */
+/* display: hidden; */
+margin: 4% auto;
+/* padding: 3% 0; */
+z-index: 2;
+background-color: rgba(0,0,0,0.5);
+position: absolute;
+color: white;
+text-align: center;
+}
+
+#overlay button {
+  display: block;
+  margin: 0 auto;
+}
+
+
+#result-list .recipe-image {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  vertical-align: top;
+}
+
+#side-bar {
+  background-color: rgba(0,0,0,0.3);
+  width: 20%;
+  height: 75vh;
+  display: inline-block;
+  vertical-align: top;
+}
+#side-bar p{
+
+  margin: 7% 5%;
+}
 table, td {
   border: 2px solid black;
 }
@@ -28,4 +79,9 @@ td {
   width: 3%;
   text-align: center;
   height: 5vh;
+}
+
+nav a, nav p {
+  display: inline-block;
+  margin: 1% 2%;
 }
