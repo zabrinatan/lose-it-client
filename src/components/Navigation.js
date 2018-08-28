@@ -24,7 +24,7 @@ class Nav extends Component {
       <div className='navbar'>
         <nav className='navlist'>
           <Link to={`/`} className='navlink'>Home</Link>
-          {localStorage.getItem('jwt') !== null ? <p>{localStorage.getItem('username')}</p>  : false }
+          {localStorage.getItem('jwt') !== null ? <Link to = {`/user`}>{localStorage.getItem('username')}</Link>  : false }
 
           <Link to={`/search`} className='navlink'>Search Recipes</Link>
           {localStorage.getItem('jwt') !== null ?   <Link to={`/my-recipes`} className='navlink'>My Recipes</Link> : false }

@@ -27,16 +27,22 @@ class User extends Component {
               user_id: localStorage.getItem('user_id'),
               data: response.data.users
             })
-
+              console.log(response.data.users)
            })
   }
   render(){
     return(
       <div>
+      <Header />
       <h1>Hiiiiii</h1>
         {this.state.data.map((item)=> {
           if(item.id == this.state.user_id){
-            return <p> {item.email}</p>
+            return <div> <p> Email: {item.email}</p>
+              <p> First Name: {item.first_name} </p>
+              <p> Last_Name: {item.last_name}</p>
+              <p> Weight(kg): {item.weight}</p>
+              <p> Height(m): {item.height}</p>
+              <p> Target weight(kg): </p></div>
           }
         })}
       </div>
