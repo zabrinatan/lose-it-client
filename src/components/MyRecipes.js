@@ -13,6 +13,7 @@ class MyRecipes extends Component {
     super();
     this.state ={
       favourites: [],
+      favouritesLabel: [],
       day: "",
       meal: "",
       recipe: "",
@@ -52,10 +53,16 @@ componentDidMount(){
              "Authorization": localStorage.getItem('jwt')
            }
     }).then((response)=>{
+      console.log(response)
       this.setState({
-        favourites: response.data
+        favourites: response.data,
       })
-    })
+    }).then(()=> {
+      this.state.favourites.map((item)=> {
+
+        this.state.favouritesLabel.push(item.label)
+        })
+      })
   }
 
   fetchMealPlans(){
@@ -63,9 +70,7 @@ componentDidMount(){
              "Authorization": localStorage.getItem('jwt')
            }
          }).then((response)=> {
-
            let data = response.data
-           console.log(data)
            data.map((item)=> {
              if(item.meal === "Breakfast"){
                if(item.day === "Sunday"){
@@ -223,9 +228,18 @@ onRecipeClick(e){
   const targetId =  document.getElementById(e.target.id)
   const targetRecipeId = targetId.innerHTML;
   const targetRecipe = document.getElementById(targetRecipeId);
-  console.log(targetRecipe);
-  targetRecipe.style.display = "inline-block"
 
+  const boxClass = document.getElementsByClassName('box')
+  //
+  // for(let i = 0 ; i< = boxClass.length ; i++){}
+  // console.log(boxClass.length)
+  //   boxClass.forEach(function(i){
+  //     if (i == e.target.id) {
+  //   console.log(i);
+  //   // console.log(obj)
+  // }
+    // })
+    targetRecipe.style.display = "inline-block";
 
 }
 
@@ -246,7 +260,7 @@ onRecipeClick(e){
       </div>
       <div id = "result-list">
       {this.state.favourites.map((item, index)=> {
-        return <div className="box" id={item.label} onClick = {this._handleClick.bind(this, item.label)}>
+        return <div className={"box " + index} id={item.label} onClick = {this._handleClick.bind(this, item.label)}>
         <div id= "overlay">Calories: {parseFloat(item.calories).toFixed(2)}Kj
         <button>View Recipe</button>
         </div>
