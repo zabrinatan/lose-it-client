@@ -7,8 +7,10 @@ const SERVER_URL = 'http://localhost:3000/'
 const USER_SERVER_URL = 'http://localhost:3000/users'
 const LOGIN_SERVER_URL = 'http://localhost:3000/user_token'
 const USER_JSON_URL = 'http://localhost:3000/users.json'
-
-
+// const SERVER_URL = 'https://lose-weight.herokuapp.com/'
+// const USER_SERVER_URL = 'https://lose-weight.herokuapp.com/users'
+// const LOGIN_SERVER_URL = 'https://lose-weight.herokuapp.com/user_token'
+// const USER_JSON_URL = 'https://lose-weight.herokuapp.com/users.json'
 class Login extends Component {
   constructor(){
     super();

@@ -7,7 +7,9 @@ import Header from './Header';
 class User extends Component {
   render(){
     return(
-      <div>Hiiiiii</div>
+      <div>
+      <h1>Hiiiiii</h1>
+      </div>
 
     )
   }

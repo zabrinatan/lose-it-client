@@ -12,8 +12,10 @@ import Login from './components/Login'
 import Register from './components/Register'
 import RecipePlanning from './components/RecipePlanning';
 import RecipeDetails from './components/RecipeDetails'
-export const history = createBrowserHistory()
 import User from './components/User'
+
+export const history = createBrowserHistory()
+
 const Routes = (
   <Router>
     <div>
