@@ -13,11 +13,12 @@ import Register from './components/Register'
 import RecipePlanning from './components/RecipePlanning';
 import RecipeDetails from './components/RecipeDetails'
 export const history = createBrowserHistory()
-
+import User from './components/User'
 const Routes = (
   <Router>
     <div>
       <Route exact path = "/" component = {Home} />
+      <Route exact path = '/user' component = {User} />
       <Route exact path = '/search' component = {RecipeSearch} />
       <Route exact path = '/my-recipes' component = {MyRecipes} />
       <Route exact path = '/login' component = {Login} />

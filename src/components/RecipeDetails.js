@@ -36,12 +36,23 @@ fetchRecipeDetails(){
   render(){
     return(
       <div>
+      <Header />
       <h1>HEllo</h1>
       {this.state.data.map((item)=> {
+
           if(item.id == this.state.recipe_id){
             return  <div>
             <h2> {item.label}</h2>
             <img src = {item.image} />
+            <h3>Ingredients</h3>
+            <h4>Calories: {parseFloat(item.calories).toFixed(0) + "kJ"}</h4>
+            <p>Servings: {parseFloat(item.yield).toFixed(0)} </p>
+            <ul>
+            {item.ingredients.map((ingredient)=> {
+              console.log(ingredient)
+              return <li>{ingredient.ingredientLabel}</li>
+            })}
+            </ul>
             </div>
           }
 
