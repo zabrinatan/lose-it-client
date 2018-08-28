@@ -10,7 +10,6 @@ import RecipeSearch from './components/RecipeSearch';
 import MyRecipes from './components/MyRecipes'
 import Login from './components/Login'
 import Register from './components/Register'
-import RecipePlanning from './components/RecipePlanning';
 import RecipeDetails from './components/RecipeDetails'
 import User from './components/User'
 

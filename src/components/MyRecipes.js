@@ -43,7 +43,8 @@ class MyRecipes extends Component {
       WednesdayDinner: "",
       ThursdayDinner: "",
       FridayDinner: "",
-      SaturdayDinner: ""
+      SaturdayDinner: "",
+      currentRecipe: undefined
     }
     this._onSubmit = this._onSubmit.bind(this)
     this.onRecipeClick = this.onRecipeClick.bind(this)
@@ -223,23 +224,19 @@ _handleClick(label, e){
 }
 
 onRecipeClick(e){
+  console.log(e.target.id)
   // document.getElementById("result-list").innerHTML = ""
+  this.setState({
+    currentRecipe: e.target.id
+  })
 
-  const targetId =  document.getElementById(e.target.id)
-  const targetRecipeId = targetId.innerHTML;
-  const targetRecipe = document.getElementById(targetRecipeId);
-
-  const boxClass = document.getElementsByClassName('box')
+  // const targetId =  document.getElementById(e.target.id)
+  // const targetRecipeId = targetId.innerHTML;
+  // const targetRecipe = document.getElementById(targetRecipeId);
   //
-  // for(let i = 0 ; i< = boxClass.length ; i++){}
-  // console.log(boxClass.length)
-  //   boxClass.forEach(function(i){
-  //     if (i == e.target.id) {
-  //   console.log(i);
-  //   // console.log(obj)
-  // }
-    // })
-    targetRecipe.style.display = "inline-block";
+  // const boxClass = document.getElementsByClassName('box')
+
+    // targetRecipe.style.display = "inline-block";
 
 }
 
@@ -259,16 +256,17 @@ onRecipeClick(e){
 
       </div>
       <div id = "result-list">
-      {this.state.favourites.map((item, index)=> {
-        return <div className={"box " + index} id={item.label} onClick = {this._handleClick.bind(this, item.label)}>
-        <div id= "overlay">Calories: {parseFloat(item.calories).toFixed(2)}Kj
+      {this.state.favourites.filter((item, index) => index == this.state.currentRecipe).map((item, index)=> {
+
+        return <div>Hi<div className={"box " + index} id={item.label} onClick = {this._handleClick.bind(this, item.label)}>
+        <div id= "overlay">Calories: {parseFloat(item.calories).toFixed(0)}Kj
       <a href = {"/#/recipes/"+ item.id}><button>View Recipe</button></a>
         </div>
 
       <img className="recipe-image" src = {item.image}/>
 
         <div className="recipe-label">{item.label}</div>
-        </div>
+        </div></div>
       })}
       </div>
       <table>
