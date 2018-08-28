@@ -12,7 +12,8 @@ class RecipeSearch extends Component {
     super();
     this.state = {
       q: "",
-      response: []
+      response: [],
+
     }
     this._handleSubmit = this._handleSubmit.bind(this);
     this._handleQuery = this._handleQuery.bind(this);

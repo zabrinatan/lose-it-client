@@ -14,6 +14,7 @@ class MyRecipes extends Component {
     this.state ={
       favourites: [],
       favouritesLabel: [],
+      recipe_id: [],
       day: "",
       meal: "",
       recipe: "",
@@ -53,16 +54,11 @@ componentDidMount(){
              "Authorization": localStorage.getItem('jwt')
            }
     }).then((response)=>{
-      console.log(response)
+      // console.log(response)
       this.setState({
         favourites: response.data,
       })
-    }).then(()=> {
-      this.state.favourites.map((item)=> {
-
-        this.state.favouritesLabel.push(item.label)
-        })
-      })
+    })
   }
 
   fetchMealPlans(){
@@ -262,7 +258,7 @@ onRecipeClick(e){
       {this.state.favourites.map((item, index)=> {
         return <div className={"box " + index} id={item.label} onClick = {this._handleClick.bind(this, item.label)}>
         <div id= "overlay">Calories: {parseFloat(item.calories).toFixed(2)}Kj
-        <button>View Recipe</button>
+      <a href = {"/#/recipes/"+ item.id}><button>View Recipe</button></a>
         </div>
 
       <img className="recipe-image" src = {item.image}/>
