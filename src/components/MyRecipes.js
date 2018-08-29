@@ -100,6 +100,15 @@ onRecipeClick(e){
           modalIsOpen={this.state.modalIsOpen}
           currentRecipe={this.state.currentRecipe}
         />
+
+        <div id='mealplan-intro'>
+        <h4>Quick Instructions</h4>
+        <ol>
+          <li>1.   Select a recipe from the list </li>
+          <li>2.   Click the square of the desired day and meal for the recipe</li>
+          <li>3.   Click the square again if you want to remove that recipe </li>
+          </ol>
+        </div>
       </div>
     )
   }

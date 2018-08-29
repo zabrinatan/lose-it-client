@@ -8,16 +8,18 @@ body {
   background-image: url('http://madang.kenzap.com/wp-content/uploads/2016/11/shutterstock_425567764.jpeg');
 }
 
+
 .navbar {
   font-family: 'Comfortaa', cursive;
 
-  background-color: #F4ACB790;
+  background-color: #F4ACB7;
   margin: 0 auto;
 }
 
 .navbar a {
   text-decoration: none;
   color: black;
+  font-weight: bolder;
 }
 .navbar a:hover {
   text-decoration: underline;
@@ -57,14 +59,23 @@ body {
 
 }
 
+#search-container {
+  max-width: 80vw;
+  margin: 0 auto;
+  background-color: #e0d1d590;
+  text-align:center;
+  min-height: 100vh;
+
+}
 .box h3 {
   padding-top: 4%;
 }
 
 .box-search {
   width: 25%;
-  margin: 0 2%;
+  margin: 2%;
   display: inline-block;
+
 }
 
 #result-list #overlay {
@@ -98,18 +109,43 @@ text-align: center;
 }
 
 #side-bar {
-  background-color: #9D818950;
+  /* background-color: #9D818950; */
   flex: 1;
   margin-right: 30px;
   height: 82vh;
   display: inline-block;
   vertical-align: top;
+  margin-top: 4%;
+  overflow: scroll;
 }
 #side-bar p {
 
-  margin: 7% 5%;
+  padding: 7% 5%;
+  background-color: #FFCAD4;
+  border-radius: 1em;
+  text-align: center;
+  margin-left: 3%;
+}
+#side-bar p:hover {
+
+  cursor:pointer;
+  box-shadow: 0 0 15px 0 white;
 }
 
+#mealplan-intro{
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  display: block;
+  width: 100vw;
+  background-color: #F4ACB7;
+}
+
+#mealplan-intro li {
+
+  display: inline-block;
+  margin: 0 2%;
+}
 
 
 #nutrients td {
@@ -185,7 +221,7 @@ nav a, nav p {
 #mealplan-table {
   flex: 5;
   background-color: #e0d1d5;
-  margin-top: 5%;
+  margin-top: 4%;
   border-radius: 1em;
   font-family: 'Comfortaa', cursive;
 
@@ -197,7 +233,7 @@ nav a, nav p {
   width: 10%;
   text-align: center;
   /* height: 5vh; */
-  padding: 3% 2%;
+  padding: 3% 1%;
   margin: 0 auto;
   box-shadow: 0 0 10px  black;
 
@@ -208,4 +244,51 @@ nav a, nav p {
   box-shadow: 0 0 50px  #9D8189;
   cursor: pointer;
 
+}
+
+#search-input{
+  width: 60%;
+  height: 10vh;
+  display: block;
+  margin: 0 auto;
+  margin-top: 4%;
+  border-radius: 0.5em;
+  background-color: #e0d1d5;
+  color: black;
+  border: none;
+  padding: 0 1%;
+
+}
+
+#search-bar input[type="text"]
+{
+    font-size:150%;
+}
+
+#search-button {
+  border:none;
+  margin: 2% auto;
+  display: block;
+  width: 15%;
+  height: 7vh;
+
+  border-radius: 0.5em;
+  font-size: 100%;
+  background-color: #F4ACB7;
+  box-shadow: 0 0 30px 0  #9D8189 ;
+
+}
+
+#search-button:hover {
+  cursor:pointer;
+  background-color: #e0d1d5;
+
+
+}
+
+#search-table {
+  /* background-color: #e0d1d590; */
+  width: 50%;
+  margin: 2% auto;
+  padding: 1% 0;
 }

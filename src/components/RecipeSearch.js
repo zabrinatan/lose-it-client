@@ -17,14 +17,14 @@ class RecipeSearch extends Component {
       response: [],
 
     }
-    this._handleSubmit = this._handleSubmit.bind(this);
+    this._handleButton = this._handleButton.bind(this);
     this._handleQuery = this._handleQuery.bind(this);
     this._handleClick = this._handleClick.bind(this);
 
 
   }
 
-_handleSubmit(e) {
+_handleButton(e) {
   e.preventDefault();
   axios.post(SERVER_RECIPE_CALL, {
     q: this.state.q
@@ -62,12 +62,13 @@ axios.post(SERVER_RECIPE_SAVE,{
     return(
       <div>
       <Header />
-      <div onSubmit = {this._handleSubmit}>
-
-      <form>
-      <input type="Search" placeholder="Search" required onChange = {this._handleQuery}/>
-
+      <div id="search-container">
+      <div id="search-table">
+      <form id="search-bar">
+      <input type="text" placeholder="Search" required onChange = {this._handleQuery} id="search-input"/>
+      <button onClick = {this._handleButton} id="search-button">Search </button>
       </form>
+      </div>
 
       {this.state.response.map((item, index)=> {
         return <div className="box-search"><div className="recipe-image"><img src = {item.recipe.image} onClick = {this._handleClickImage}/></div> <div className="recipe-label">{item.recipe.label}</div>
