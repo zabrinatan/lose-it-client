@@ -190,18 +190,18 @@ class MealPlanner extends Component {
         <thead>
         <tr>
         <th></th>
-        <th>Sunday</th>
-        <th>Monday</th>
-        <th>Tuesday</th>
-        <th>Wednesday</th>
-        <th>Thursday</th>
-        <th>Friday</th>
-        <th>Saturday</th>
+        <th><h3>Sunday</h3></th>
+        <th><h3>Monday</h3></th>
+        <th><h3>Tuesday</h3></th>
+        <th><h3>Wednesday</h3></th>
+        <th><h3>Thursday</h3></th>
+        <th><h3>Friday</h3></th>
+        <th><h3>Saturday</h3></th>
         </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Breakfast</td>
+            <td><h3>Breakfast</h3></td>
             <td id="SundayBreakfast" onClick={this._onClick.bind(this, 'Sunday', 'Breakfast')}>{this.state.SundayBreakfast}</td>
             <td id="MondayBreakfast" onClick={this._onClick.bind(this, 'Monday', 'Breakfast')}>{this.state.MondayBreakfast}</td>
             <td id="TuesdayBreakfast" onClick={this._onClick.bind(this, 'Tuesday', 'Breakfast')}>{this.state.TuesdayBreakfast}</td>
@@ -212,7 +212,7 @@ class MealPlanner extends Component {
 
           </tr>
           <tr>
-          <td>Lunch</td>
+          <td><h3>Lunch</h3></td>
           <td id="SundayLunch" onClick={this._onClick.bind(this, 'Sunday', 'Lunch')}>{this.state.SundayLunch}</td>
           <td id="MondayLunch" onClick={this._onClick.bind(this, 'Monday', 'Lunch')}>{this.state.MondayLunch}</td>
           <td id="TuesdayLunch" onClick={this._onClick.bind(this, 'Tuesday', 'Lunch')}>{this.state.TuesdayLunch}</td>
@@ -223,7 +223,7 @@ class MealPlanner extends Component {
           </tr>
 
           <tr>
-          <td>Dinner </td>
+          <td><h3>Dinner</h3></td>
           <td id="SundayDinner" onClick={this._onClick.bind(this, 'Sunday', 'Dinner')}>{this.state.SundayDinner}</td>
           <td id="MondayDinner" onClick={this._onClick.bind(this, 'Monday', 'Dinner')}>{this.state.MondayDinner}</td>
           <td id="TuesdayDinner" onClick={this._onClick.bind(this, 'Tuesday', 'Dinner')}>{this.state.TuesdayDinner}</td>

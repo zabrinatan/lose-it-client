@@ -9,9 +9,11 @@ const modalStyle = {
     left                  : '50%',
     right                 : 'auto',
     bottom                : 'auto',
-    marginRight           : '-50%',
+    // marginRight           : '50%',
     transform             : 'translate(-50%, -50%)',
-    border                : 'none'
+    border                : 'none',
+    padding               : '0',
+
   }
 };
 // <p>Calories: {(parseFloat(item.calories) / parseFloat(item.yield)).toFixed(0)}cal</p>

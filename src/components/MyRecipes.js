@@ -84,7 +84,6 @@ onRecipeClick(e){
     return (
       <div id="myRecipesPage">
         <Header />
-        <h1>My Saved Recipes</h1>
 
         <div className="container">
           <div id="side-bar">

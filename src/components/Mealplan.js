@@ -38,7 +38,7 @@ class Mealplan extends Component {
           </thead>
           <tbody>
             <tr>
-              <td>Breakfast</td>
+              <td><h3>Breakfast</h3></td>
               <td id = "1" onClick = {this._onClick.bind(this, 'Sunday', 'Breakfast')}></td>
               <td id = "2" onClick = {this._onClick.bind(this, 'Monday', 'Breakfast')}></td>
               <td id = "3" onClick = {this._onClick.bind(this, 'Tuesday', 'Breakfast')}></td>
@@ -49,7 +49,7 @@ class Mealplan extends Component {
 
             </tr>
             <tr>
-            <td>Lunch</td>
+            <td><h3>Lunch</h3></td>
             <td id = "8" onClick = {this._onClick.bind(this, 'Sunday', 'Lunch')}></td>
             <td id = "9" onClick = {this._onClick.bind(this, 'Monday', 'Lunch')}></td>
             <td id = "10" onClick = {this._onClick.bind(this, 'Tuesday', 'Lunch')}></td>
@@ -60,7 +60,7 @@ class Mealplan extends Component {
             </tr>
 
             <tr>
-            <td>Dinner </td>
+            <td><h3>Dinner</h3> </td>
             <td id = "15" onClick = {this._onClick.bind(this, 'Sunday', 'Dinner')}></td>
             <td id = "16" onClick = {this._onClick.bind(this, 'Monday', 'Dinner')}></td>
             <td id = "17" onClick = {this._onClick.bind(this, 'Tuesday', 'Dinner')}></td>
