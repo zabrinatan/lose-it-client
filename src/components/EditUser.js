@@ -6,8 +6,8 @@ import Header from './Header';
 const SERVER_USER_URL = "http://localhost:3000/users.json"
 const SERVER_UPDATE_USER = "http://localhost:3000/users/update"
 class EditUser extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state ={
       user_id: '',
       first_name: '',
@@ -20,8 +20,8 @@ class EditUser extends Component {
     this._handleLastName = this._handleLastName.bind(this);
     this._handleWeight = this._handleWeight.bind(this);
     this._handleHeight = this._handleHeight.bind(this);
-    this._handleSubmit = this._handleSubmit.bind(this);
-
+    // this._handleSubmit = this._handleSubmit.bind(this);
+    this._handleClick = this._handleClick.bind(this);
   }
 
 componentDidMount(){
@@ -58,17 +58,21 @@ fetchUser(){
 
 
   }
-  _handleSubmit(){
-    axios.post(SERVER_UPDATE_USER, {
-      first_name: this.state.first_name,
-      last_name: this.state.last_name,
-      weight: this.state.weight,
-      height: this.state.height
-    }, {headers: {
-             "Authorization": localStorage.getItem('jwt')
-           }
-    })
-  }
+  // _handleSubmit(){
+    // axios.post(SERVER_UPDATE_USER, {
+    //   first_name: this.state.first_name,
+    //   last_name: this.state.last_name,
+    //   weight: this.state.weight,
+    //   height: this.state.height
+    // }, {headers: {
+    //          "Authorization": localStorage.getItem('jwt')
+    //        }
+    // }).then(()=> {
+    //   this.props.history.push('/user')}
+    //   ).catch( (errors) => {
+    //   console.log(errors)
+    // })
+  // }
 
   _handleFirstName (e){
     this.setState({
@@ -92,10 +96,27 @@ fetchUser(){
       height: e.target.value
     })
   }
+
+_handleClick(e){
+  e.preventDefault();
+  axios.post(SERVER_UPDATE_USER, {
+    first_name: this.state.first_name,
+    last_name: this.state.last_name,
+    weight: this.state.weight,
+    height: this.state.height
+  }, {headers: {
+           "Authorization": localStorage.getItem('jwt')
+         }
+  }).then(()=> {
+    this.props.history.push('/user')}
+    ).catch( (errors) => {
+    console.log(errors)
+  })
+}
   render(){
     return(
       <div>
-        <form onSubmit = {this._handleSubmit}>
+        <form>
         <label>First Name: </label>
         <input type="text" value = {this.state.first_name} onChange = {this._handleFirstName}/>
         <label>Last Name</label>
@@ -104,7 +125,7 @@ fetchUser(){
         <input type = "number" value = {this.state.weight} onChange = {this._handleWeight} />
         <label>Height(m): </label>
         <input type = "number" value = {this.state.height} onChange = {this._handleHeight} />
-        <button> Edit Profile </button>
+        <button onClick = {this._handleClick}> Edit Profile </button>
         </form>
 
       </div>
