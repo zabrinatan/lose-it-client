@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
 body {
+  font-family: 'Comfortaa', cursive;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -6,6 +9,8 @@ body {
 }
 
 .navbar {
+  font-family: 'Comfortaa', cursive;
+
   background-color: #F4ACB790;
   margin: 0 auto;
 }
@@ -21,6 +26,8 @@ body {
 }
 
 .logout {
+  font-family: 'Comfortaa', cursive;
+  font-size: 100%;
   float:right;
   margin-top: 0.5%;
   border:none;
@@ -120,6 +127,8 @@ nav a, nav p {
 .container {
   display: flex;
   margin-right: 30px;
+  font-family: 'Comfortaa', cursive;
+
 }
 
 #nutrients {
@@ -178,6 +187,8 @@ nav a, nav p {
   background-color: #e0d1d5;
   margin-top: 5%;
   border-radius: 1em;
+  font-family: 'Comfortaa', cursive;
+
 
 }
 
