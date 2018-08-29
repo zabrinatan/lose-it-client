@@ -45,6 +45,7 @@ class User extends Component {
               <p> Target weight(kg): </p></div>
           }
         })}
+        <a href = "/#/user/edit"><button>Edit Profile </button></a>
       </div>
 
     )

@@ -12,7 +12,7 @@ import Login from './components/Login'
 import Register from './components/Register'
 import RecipeDetails from './components/RecipeDetails'
 import User from './components/User'
-
+import EditUser from './components/EditUser'
 export const history = createBrowserHistory()
 
 const Routes = (
@@ -20,6 +20,7 @@ const Routes = (
     <div>
       <Route exact path = "/" component = {Home} />
       <Route exact path = '/user' component = {User} />
+      <Route exact path = '/user/edit' component = {EditUser} />
       <Route exact path = '/search' component = {RecipeSearch} />
       <Route exact path = '/my-recipes' component = {MyRecipes} />
       <Route exact path = '/login' component = {Login} />

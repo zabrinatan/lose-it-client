@@ -21,15 +21,11 @@ class Register extends Component {
               email: '',
               password: '',
               password_confirmation: '',
-              height: '',
-              weight: ''
             }
     }
     this._handleEmailInput = this._handleEmailInput.bind(this)
        this._handlePasswordInput = this._handlePasswordInput.bind(this)
        this._handlePasswordConfirm = this._handlePasswordConfirm.bind(this)
-       this._handleWeightInput = this._handleWeightInput.bind(this)
-       this._handleHeightInput = this._handleHeightInput.bind(this)
        this._handleSubmit = this._handleSubmit.bind(this)
 
 
@@ -56,16 +52,7 @@ _handlePasswordConfirm(e) {
   })
 }
 
-_handleWeightInput(e){
-  this.setState({
-    user: { ...this.state.user, weight: e.target.value}
-  })
-}
-_handleHeightInput(e){
-  this.setState({
-    user: { ...this.state.user, weight: e.target.value}
-  })
-}
+
 
 _handleSubmit(e) {
   e.preventDefault();
@@ -106,10 +93,6 @@ _handleSubmit(e) {
       <input type="password" placeholder="Password" onChange={this._handlePasswordInput} value={this.state.user.password} required />
       <label> Confirm Password </label>
       <input type="password" placeholder="confirm password" required  onChange={this._handlePasswordConfirm} value={this.state.user.password_confirmation} required/>
-      <label> Weight(kg) </label>
-      <input type="text" placeholder =" 60" required onChange= {this._handleWeightInput}/>
-      <label> Height(m) </label>
-      <input type="text" placeholder =" 1.6" required onChange= {this._handleHeightInput}/>
       <button type="submit" name="signup" disabled={this.state.form_disabled}>Sign Up</button>
       </form>
     )
