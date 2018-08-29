@@ -42,7 +42,7 @@ class User extends Component {
               <p> Last_Name: {item.last_name}</p>
               <p> Weight(kg): {item.weight}</p>
               <p> Height(m): {item.height}</p>
-              <p> Target weight(kg): </p></div>
+              <p> Target weight(kg):{item.target_weight} </p></div>
           }
         })}
         <a href = "/#/user/edit"><button>Edit Profile </button></a>

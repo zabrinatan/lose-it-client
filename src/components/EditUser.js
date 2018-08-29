@@ -14,12 +14,14 @@ class EditUser extends Component {
       last_name: '',
       weight: '',
       height: '',
+      target_weight: '',
       response: []
     }
     this._handleFirstName = this._handleFirstName.bind(this);
     this._handleLastName = this._handleLastName.bind(this);
     this._handleWeight = this._handleWeight.bind(this);
     this._handleHeight = this._handleHeight.bind(this);
+    this._handleTarget = this._handleTarget.bind(this);
     // this._handleSubmit = this._handleSubmit.bind(this);
     this._handleClick = this._handleClick.bind(this);
   }
@@ -96,6 +98,11 @@ fetchUser(){
       height: e.target.value
     })
   }
+  _handleTarget(e){
+    this.setState({
+      target_weight: e.target.value
+    })
+  }
 
 _handleClick(e){
   e.preventDefault();
@@ -103,7 +110,8 @@ _handleClick(e){
     first_name: this.state.first_name,
     last_name: this.state.last_name,
     weight: this.state.weight,
-    height: this.state.height
+    height: this.state.height,
+    target_weight: this.state.target_weight
   }, {headers: {
            "Authorization": localStorage.getItem('jwt')
          }
@@ -125,6 +133,8 @@ _handleClick(e){
         <input type = "number" value = {this.state.weight} onChange = {this._handleWeight} />
         <label>Height(m): </label>
         <input type = "number" value = {this.state.height} onChange = {this._handleHeight} />
+        <label>Target Weight(kg): </label>
+        <input type = "number" value = {this.state.target_weight} onChange = {this._handleTarget} />
         <button onClick = {this._handleClick}> Edit Profile </button>
         </form>
 
