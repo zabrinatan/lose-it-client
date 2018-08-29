@@ -5,7 +5,7 @@ body {
 }
 
 #result-list {
-  width: 80%;
+  width: 100%;
   /* border: 1px solid black; */
   margin: 0 auto;
   /* visibility: hidden; */
@@ -49,7 +49,7 @@ text-align: center;
 
 
 #result-list .recipe-image {
-  width: 100%;
+  width: 25vw;
   margin: 0 auto;
   display: block;
   vertical-align: top;
@@ -57,31 +57,39 @@ text-align: center;
 
 #side-bar {
   background-color: rgba(0,0,0,0.3);
-  width: 20%;
-  height: 75vh;
+  flex: 1;
+  margin-right: 30px;
+  height: 95vh;
   display: inline-block;
   vertical-align: top;
 }
-#side-bar p{
+#side-bar p {
 
   margin: 7% 5%;
 }
-table, td {
+ td {
   border: 2px solid black;
 }
 
 table {
-  width: 70%;
-  display: block;
+  border: 2px solid black;
+  flex: 5;
+  display: inline-block;
   margin: 0 auto;
 }
 td {
   width: 3%;
   text-align: center;
   height: 5vh;
+
 }
 
 nav a, nav p {
   display: inline-block;
   margin: 1% 2%;
+}
+
+.container {
+  display: flex;
+  margin-right: 30px;
 }

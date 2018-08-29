@@ -11,7 +11,8 @@ class User extends Component {
     super(props);
     this.state = {
       user_id: "",
-      data: []
+      data: [],
+      BMI: ''
     }
   }
   componentDidMount(){
@@ -27,8 +28,7 @@ class User extends Component {
               user_id: localStorage.getItem('user_id'),
               data: response.data.users
             })
-              console.log(response.data.users)
-           })
+          })
   }
   render(){
     return(
@@ -42,7 +42,16 @@ class User extends Component {
               <p> Last_Name: {item.last_name}</p>
               <p> Weight(kg): {item.weight}</p>
               <p> Height(m): {item.height}</p>
-              <p> Target weight(kg):{item.target_weight} </p></div>
+              <p> Target weight(kg):{item.target_weight} </p>
+              <p>Daily Calories Limit: {item.calories}</p>
+              <p>Daily Proteins Limit: {item.proteins}</p>
+              <p>Daily Fats Limit: {item.fats}</p>
+              <p>Daily Carbs Limit: {item.carbs}</p>
+
+              <p>Calculated BMI: {(parseFloat(item.weight) / (parseFloat(item.height) * parseFloat(item.height))).toFixed(2) } </p>
+
+              <p>Recommended foods </p>
+              </div>
           }
         })}
         <a href = "/#/user/edit"><button>Edit Profile </button></a>

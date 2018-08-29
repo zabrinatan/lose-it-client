@@ -48,6 +48,7 @@ fetchRecipeDetails(){
             <h3>Ingredients</h3>
             <h4>Calories: {parseFloat(item.calories).toFixed(0) + "kJ"}</h4>
             <p>Servings: {parseFloat(item.yield).toFixed(0)} </p>
+            <a href ={item.url}>hi</a>
             <ul>
             {item.ingredients.map((ingredient)=> {
               console.log(ingredient)
