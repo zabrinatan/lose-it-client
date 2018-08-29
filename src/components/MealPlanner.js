@@ -186,7 +186,7 @@ class MealPlanner extends Component {
 
   render() {
     return (
-      <table>
+      <table id="mealplan-table">
         <thead>
         <tr>
         <th></th>

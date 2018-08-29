@@ -17,14 +17,13 @@ class Mealplan extends Component {
       day: day
     })
       const currentId = e.target.id
-      // const targetSquare = document.getElementById(currentId);
-      // targetSquare.style.backgroundColor = "red"
+
 
   }
   render(){
     return(
       <div>
-        <table>
+        <table id= "mealplan-table">
           <thead>
           <tr>
           <th></th>

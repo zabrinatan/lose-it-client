@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Mealplan from './Mealplan'
 import Header from './Header'
 import MealPlanner from './MealPlanner'
 import RecipeModal from './RecipeModal'
