@@ -36,7 +36,7 @@ class RecipeModal extends Component {
             return (
               <div key={index}>
                 <div className={`box ${index}`} id={item.label} >
-                <div className="recipe-label"><h3>{item.label}</h3></div>
+                <div className="recipe-title"><h3>{item.label}</h3></div>
                   <img className="recipe-image" src={item.image}/>
                   <table id="nutrients">
                   <thead>

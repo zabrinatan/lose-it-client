@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-const SERVER_DESTROY_MEALPLAN = "http://localhost:3000/mealplans"
-const SERVER_MEALPLAN = "http://localhost:3000/mealplans/addmeal"
-const SERVER_MY_MEALPLANS = "http://localhost:3000/mealplans.json"
+// const SERVER_DESTROY_MEALPLAN = "http://localhost:3000/mealplans"
+// const SERVER_MEALPLAN = "http://localhost:3000/mealplans/addmeal"
+// const SERVER_MY_MEALPLANS = "http://localhost:3000/mealplans.json"
+
+const SERVER_DESTROY_MEALPLAN = "https://lose-weight.herokuapp.com/mealplans"
+const SERVER_MEALPLAN = "https://lose-weight.herokuapp.com/mealplans/addmeal"
+const SERVER_MY_MEALPLANS = "https://lose-weight.herokuapp.com/mealplans.json"
+
 
 class MealPlanner extends Component {
   constructor() {

@@ -4,11 +4,12 @@ import axios from 'axios';
 import Header from './Header'
 
 // const SERVER_RECIPE_SAVE ="https://lose-weight.herokuapp.com/recipes"
-const SERVER_RECIPE_SAVE = "http://localhost:3000/recipes"
-const SERVER_INGREDIENT_SAVE = "http://localhost:3000/addingredients"
-// const SERVER_RECIPE_CALL ='https://lose-weight.herokuapp.com/recipes/apicall';
-
-const SERVER_RECIPE_CALL ='http://localhost:3000/recipes/apicall';
+// const SERVER_RECIPE_SAVE = "http://localhost:3000/recipes"
+// const SERVER_INGREDIENT_SAVE = "http://localhost:3000/addingredients"
+const SERVER_RECIPE_CALL ='https://lose-weight.herokuapp.com/recipes/apicall';
+const SERVER_RECIPE_SAVE = "https://lose-weight.herokuapp.com/recipes"
+const SERVER_INGREDIENT_SAVE = "https://lose-weight.herokuapp.com/addingredients"
+// const SERVER_RECIPE_CALL ='http://localhost:3000/recipes/apicall';
 class RecipeSearch extends Component {
   constructor(){
     super();

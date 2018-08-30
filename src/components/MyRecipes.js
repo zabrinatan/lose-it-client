@@ -5,14 +5,14 @@ import Header from './Header'
 import MealPlanner from './MealPlanner'
 import RecipeModal from './RecipeModal'
 
-const SERVER_MEALPLAN = "http://localhost:3000/mealplans/addmeal"
-const SERVER_MY_RECIPES = "http://localhost:3000/recipes.json"
-const SERVER_MY_MEALPLANS = "http://localhost:3000/mealplans.json"
-const SERVER_DESTROY_MEALPLAN = "http://localhost:3000/mealplans"
-// const SERVER_MEALPLAN = "https://lose-weight.herokuapp.com/mealplans/addmeal"
-// const SERVER_MY_RECIPES = "https://lose-weight.herokuapp.com/recipes.json"
-// const SERVER_MY_MEALPLANS = "https://lose-weight.herokuapp.com/mealplans.json"
-// const SERVER_DESTROY_MEALPLAN = "https://lose-weight.herokuapp.com/mealplans"
+// const SERVER_MEALPLAN = "http://localhost:3000/mealplans/addmeal"
+// const SERVER_MY_RECIPES = "http://localhost:3000/recipes.json"
+// const SERVER_MY_MEALPLANS = "http://localhost:3000/mealplans.json"
+// const SERVER_DESTROY_MEALPLAN = "http://localhost:3000/mealplans"
+const SERVER_MEALPLAN = "https://lose-weight.herokuapp.com/mealplans/addmeal"
+const SERVER_MY_RECIPES = "https://lose-weight.herokuapp.com/recipes.json"
+const SERVER_MY_MEALPLANS = "https://lose-weight.herokuapp.com/mealplans.json"
+const SERVER_DESTROY_MEALPLAN = "https://lose-weight.herokuapp.com/mealplans"
 class MyRecipes extends Component {
   constructor() {
     super();

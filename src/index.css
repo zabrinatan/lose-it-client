@@ -14,6 +14,8 @@ body {
 
   background-color: #2EC4B6;
   margin: 0 auto;
+  text-align:center;
+
 }
 
 .navbar a {
@@ -202,7 +204,7 @@ nav a, nav p {
   margin: 2% auto;
   display: inline-block;
   border: none;
-  background-color: #FFCAD4;
+  background-color: #2EC4B680;
   padding: 3%;
   border-radius: 1em;
 }
@@ -219,7 +221,7 @@ nav a, nav p {
 
 #view-recipe button {
   border:none;
-  background-color: #FFCAD4;
+  background-color: #2EC4B680;
   padding: 3%;
   margin: 2%;
   display: inline-block;
@@ -331,25 +333,31 @@ nav a, nav p {
   text-decoration: underline;
 }
 
-#user-details, #daily-limits, #bmi-calculated {
-  width:20%;
+#user-details , #daily-limits , #bmi-calculated {
+  width:30%;
   display: inline-block;
-  background-color: #e0d1d5;
+  background-color: #FDFFFC;
   /* border: 2px solid black; */
   margin: 2%;
   border-radius: 1em;
   box-shadow: 0 0 15px 0 #9D8189;
   vertical-align: top;
   text-align: left;
+  padding: 2%;
+}
+
+#user-details h3, #daily-limits h3, #bmi-calculated h3{
+text-align:center;
 }
 
 #user-details p{
-  padding: 2%;
+  padding: 3%;
 }
 
 #user-container {
   display: block;
   text-align: center;
+
 
 }
 
@@ -364,4 +372,99 @@ nav a, nav p {
 
   /* color: white; */
   font-weight: bolder;
+}
+
+.recipe-title {
+  background-color: #2EC4B680;
+  display: block;
+  margin: 0 auto;
+  text-align:center;
+  padding: 2%;
+}
+
+#user-details .label-input, #daily-limits .label-input {
+  padding: 3%;
+
+}
+
+#user-details .label-input input, #daily-limits .label-input input {
+  width: 40%;
+}
+
+#edit-profile-button {
+  display: inline-block;
+margin: 2%;
+/* margin-right: 15%; */
+}
+#edit-profile-button button {
+  border: none;
+  width: 120%;
+  font-size: 150%;
+  border-radius: 1em;
+  background-color: #2EC4B6;
+  padding: 6% 2%;
+}
+#edit-profile-button button:hover {
+  cursor:pointer;
+  text-decoration: underline;
+}
+
+iframe {
+  display: block;
+  margin: 2% auto;
+}
+
+#banner {
+  width: 100%;
+  margin: 0 auto;
+  height: 95vh;
+  /* height: 20vh; */
+}
+
+#home-container {
+  text-align: center;
+  font-family: 'Comfortaa', cursive;
+  background-color: rgba(0, 0,0, 0.5);
+  padding: 8vh 0 ;
+
+}
+#home-container h1 {
+  font-size: 500%;
+  color:white;
+
+}
+
+#login-form {
+  display: block;
+  margin: 8% auto;
+  /* border: 2px solid black; */
+  text-align: center;
+  width: 30%;
+  padding: 3% 0 ;
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0, 0, 100px, 0 #2EC4B6;
+  border-radius: 1em;
+}
+
+#login-form h2 {
+  color: white;
+}
+
+#login-form input {
+  display: block;
+  margin: 5% auto;
+  padding: 2% 0 ;
+  width: 50%;
+  border-radius: 1em;
+}
+
+#login-form input[type="submit"]{
+  background-color: #2EC4B6;
+  border: none;
+  height: 6vh;
+  width: 25%;
+  font-size: 100%;
+}
+#login-form input[type="submit"]:hover{
+  text-decoration: underline;
 }

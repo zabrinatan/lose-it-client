@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Header from './Header';
 
-const SERVER_USER_URL = "http://localhost:3000/users.json"
-const SERVER_UPDATE_USER = "http://localhost:3000/users/update"
+// const SERVER_USER_URL = "http://localhost:3000/users.json"
+// const SERVER_UPDATE_USER = "http://localhost:3000/users/update"
+const SERVER_USER_URL = "https://lose-weight.herokuapp.com/users.json"
+const SERVER_UPDATE_USER = "https://lose-weight.herokuapp.com/update"
+
 class EditUser extends Component {
   constructor(props){
     super(props);
@@ -117,29 +120,57 @@ _handleClick(e){
 }
   render(){
     return(
-      <div>
+
+      <div id="user-container">
+      <Header />
+
         <form>
+        <div id="user-details">
+          <h3>User Details</h3>
+        <div className="label-input">
         <label>First Name: </label>
         <input type="text" value = {this.state.first_name} onChange = {this._handleFirstName}/>
+        </div>
+        <div className="label-input">
         <label>Last Name</label>
         <input type="text"  value = {this.state.last_name} onChange = {this._handleLastName} />
+        </div>
+        <div className="label-input">
         <label>Weight(kg): </label>
         <input type = "number" value = {this.state.weight} onChange = {this._handleWeight} />
+        </div>
+        <div className="label-input">
         <label>Height(m): </label>
         <input type = "number" value = {this.state.height} onChange = {this._handleHeight} />
+        </div>
+        <div className="label-input">
         <label>Target Weight(kg): </label>
         <input type = "number" value = {this.state.target_weight} onChange = {this._handleTarget} />
-        <div id="setLimits">
+        </div>
+        </div>
+
+        <div id="daily-limits">
+        <h3>Daily Limits</h3>
+        <div className="label-input">
         <label>Daily Calorie Limit </label>
         <input type="text" value = {this.state.calories} onChange = {(e) => this.setState({ calories: e.target.value })}/>
+        </div>
+        <div className="label-input">
         <label> Daily Carbohydrate Limit </label>
         <input type = "text" value = {this.state.carbs} onChange = {(e) => this.setState({ carbs: e.target.value })}/>
+        </div>
+        <div className="label-input">
         <label> Daily Protein Limit </label>
         <input type= "text" value = {this.state.proteins} onChange = {(e) => this.setState({ proteins: e.target.value })}/>
+        </div>
+        <div className="label-input">
         <label> Daily Fat Limit </label>
         <input type= "text" value = {this.state.fats} onChange = {(e) => this.setState({ fats: e.target.value })}/>
         </div>
-        <button onClick = {this._handleClick}> Edit Profile </button>
+        </div>
+        <div id="edit-profile-button">
+        <button onClick = {this._handleClick}>Save Changes</button>
+        </div>
         </form>
 
       </div>

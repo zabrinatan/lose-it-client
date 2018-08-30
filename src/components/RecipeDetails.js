@@ -4,8 +4,8 @@ import axios from 'axios';
 import Header from './Header'
 
 
-const SERVER_MY_RECIPES = 'http://localhost:3000/recipes.json'
-// const SERVER_MY_RECIPES = 'https://lose-weight.herokuapp.com/recipe.json'
+// const SERVER_MY_RECIPES = 'http://localhost:3000/recipes.json'
+const SERVER_MY_RECIPES = 'https://lose-weight.herokuapp.com/recipe.json'
 class RecipeDetails extends Component {
   constructor(props){
     super(props);

@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import _ from 'lodash'
+//
+// const SERVER_URL = 'http://localhost:3000/'
+// const USER_SERVER_URL = 'http://localhost:3000/users'
 
-const SERVER_URL = 'http://localhost:3000/'
-const USER_SERVER_URL = 'http://localhost:3000/users'
-
-// const SERVER_URL = 'https://lose-weight.herokuapp.com/'
-// const USER_SERVER_URL = 'https://lose-weight.herokuapp.com/users'
+const SERVER_URL = 'https://lose-weight.herokuapp.com/'
+const USER_SERVER_URL = 'https://lose-weight.herokuapp.com/users'
 
 class Register extends Component {
 
