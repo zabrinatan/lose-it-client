@@ -58,21 +58,24 @@ axios.post(SERVER_RECIPE_SAVE,{
 )
 
 }
+
+
   render(){
     return(
       <div>
       <Header />
-      <div id="search-container">
+
       <div id="search-table">
       <form id="search-bar">
       <input type="text" placeholder="Search" required onChange = {this._handleQuery} id="search-input"/>
       <button onClick = {this._handleButton} id="search-button">Search </button>
       </form>
       </div>
-
+      <div id="search-container">
       {this.state.response.map((item, index)=> {
-        return <div className="box-search"><div className="recipe-image"><img src = {item.recipe.image} onClick = {this._handleClickImage}/></div> <div className="recipe-label">{item.recipe.label}</div>
-        <button id = {index} onClick={this._handleClick}>Add to Favorites</button>
+        return <div className="box-search">
+        <button className="button-overlay"id = {index} onClick={this._handleClick}>Add to Favorites</button>
+        <img className="recipe-image"src = {item.recipe.image} onClick = {this._handleClickImage}/><p className="recipe-label">{item.recipe.label}</p>
         </div>
       })}
 

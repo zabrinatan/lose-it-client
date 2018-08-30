@@ -34,23 +34,26 @@ class User extends Component {
     return(
       <div>
       <Header />
-      <h1>Hiiiiii</h1>
         {this.state.data.map((item)=> {
           if(item.id == this.state.user_id){
-            return <div> <p> Email: {item.email}</p>
+            return <div id="user-container">
+            <div id="user-details">
+              <p> Email: {item.email}</p>
               <p> First Name: {item.first_name} </p>
               <p> Last_Name: {item.last_name}</p>
               <p> Weight(kg): {item.weight}</p>
               <p> Height(m): {item.height}</p>
               <p> Target weight(kg):{item.target_weight} </p>
+            </div>
+            <div id="daily-limits">
               <p>Daily Calories Limit: {item.calories}</p>
               <p>Daily Proteins Limit: {item.proteins}</p>
               <p>Daily Fats Limit: {item.fats}</p>
               <p>Daily Carbs Limit: {item.carbs}</p>
-
+            </div>
+            <div id="bmi-calculated">
               <p>Calculated BMI: {(parseFloat(item.weight) / (parseFloat(item.height) * parseFloat(item.height))).toFixed(2) } </p>
-
-              <p>Recommended foods </p>
+            </div>
               </div>
           }
         })}
