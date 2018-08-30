@@ -458,13 +458,15 @@ iframe {
   border-radius: 1em;
 }
 
-#login-form input[type="submit"]{
+#login-form input[type="submit"], #login-form button{
   background-color: #2EC4B6;
   border: none;
   height: 6vh;
   width: 25%;
   font-size: 100%;
+  border-radius: 1em;
 }
-#login-form input[type="submit"]:hover{
+#login-form input[type="submit"]:hover, #login-form button:hover{
   text-decoration: underline;
+  cursor: pointer;
 }

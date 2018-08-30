@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import _ from 'lodash'
-//
+import Header from './Header'
 // const SERVER_URL = 'http://localhost:3000/'
 // const USER_SERVER_URL = 'http://localhost:3000/users'
 
@@ -85,16 +85,18 @@ _handleSubmit(e) {
 
   render(){
     return (
+      <div>
+      <Header />
+        <div id="login-form">
       <form onSubmit = {this._handleSubmit}>
         <h2>Register</h2>
-        <label> Email </label>
       <input name="user_name"type="email" placeholder="Email" onChange = {this._handleEmailInput} value = {this.state.user.email} required autoFocus />
-      <label> Password </label>
       <input type="password" placeholder="Password" onChange={this._handlePasswordInput} value={this.state.user.password} required />
-      <label> Confirm Password </label>
       <input type="password" placeholder="confirm password" required  onChange={this._handlePasswordConfirm} value={this.state.user.password_confirmation} required/>
       <button type="submit" name="signup" disabled={this.state.form_disabled}>Sign Up</button>
       </form>
+      </div>
+      </div>
     )
   }
 }
