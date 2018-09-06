@@ -10,7 +10,6 @@ import RecipeSearch from './components/RecipeSearch';
 import MyRecipes from './components/MyRecipes'
 import Login from './components/Login'
 import Register from './components/Register'
-import RecipeDetails from './components/RecipeDetails'
 import User from './components/User'
 import EditUser from './components/EditUser'
 export const history = createBrowserHistory()
@@ -25,7 +24,6 @@ const Routes = (
       <Route exact path = '/my-recipes' component = {MyRecipes} />
       <Route exact path = '/login' component = {Login} />
       <Route exact path = '/register' component = {Register} />
-      <Route exact path = '/recipes/:id' component = {RecipeDetails}/>
 
     </div>
   </Router>

@@ -9,17 +9,12 @@ const modalStyle = {
     left                  : '50%',
     right                 : 'auto',
     bottom                : 'auto',
-    // marginRight           : '50%',
     transform             : 'translate(-50%, -50%)',
     border                : 'none',
     padding               : '0',
 
   }
 };
-// <p>Calories: {(parseFloat(item.calories) / parseFloat(item.yield)).toFixed(0)}cal</p>
-// <p>Carbs: {(parseFloat(item.carbs) / parseFloat(item.yield)).toFixed(0)}g</p>
-// <p>Proteins: {(parseFloat(item.proteins) / parseFloat(item.yield)).toFixed(0)}g</p>
-// <p>Fats: {(parseFloat(item.fats) / parseFloat(item.yield)).toFixed(0)}g</p>
 
 class RecipeModal extends Component {
   render() {
@@ -41,11 +36,10 @@ class RecipeModal extends Component {
                   <table id="nutrients">
                   <thead>
                     <tr>
-                    <th>
-                      <td>Nutrients</td>
-                      <td>Quantity</td>
-                    </th>
+                      <th>Nutrients</th>
+                      <th>Quantity</th>
                     </tr>
+                    </thead>
                     <tbody>
                       <tr>
                       <td>Total Calories</td>
@@ -64,7 +58,6 @@ class RecipeModal extends Component {
                         <td>{(parseFloat(item.fats) / parseFloat(item.yield)).toFixed(0)} g</td>
                       </tr>
                     </tbody>
-                  </thead>
                   </table>
                   <div id="modal-buttons">
                     <a id = "view-recipe" href = {item.url} target= "_blank"><button>View Recipe</button></a>

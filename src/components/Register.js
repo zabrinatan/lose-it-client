@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import _ from 'lodash'
 import Header from './Header'
@@ -23,12 +22,10 @@ class Register extends Component {
               password_confirmation: '',
             }
     }
-    this._handleEmailInput = this._handleEmailInput.bind(this)
+      this._handleEmailInput = this._handleEmailInput.bind(this)
        this._handlePasswordInput = this._handlePasswordInput.bind(this)
        this._handlePasswordConfirm = this._handlePasswordConfirm.bind(this)
        this._handleSubmit = this._handleSubmit.bind(this)
-
-
 
   const fetchUsers = () => {
   axios.get(SERVER_URL + 'users.json').then(result => {
@@ -36,7 +33,6 @@ class Register extends Component {
     this.setState({ users: result.data.users })
   })
 }
-
 fetchUsers();
 }
 
@@ -66,7 +62,6 @@ _handleSubmit(e) {
   })
 
 }
-
   _handleEmailInput(e) {
      if (_.filter(this.state.users, { email: e.target.value }).length === 0) {
        this.setState({

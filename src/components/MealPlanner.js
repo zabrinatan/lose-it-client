@@ -4,7 +4,6 @@ import axios from 'axios';
 // const SERVER_DESTROY_MEALPLAN = "http://localhost:3000/mealplans"
 // const SERVER_MEALPLAN = "http://localhost:3000/mealplans/addmeal"
 // const SERVER_MY_MEALPLANS = "http://localhost:3000/mealplans.json"
-
 const SERVER_DESTROY_MEALPLAN = "https://lose-weight.herokuapp.com/mealplans"
 const SERVER_MEALPLAN = "https://lose-weight.herokuapp.com/mealplans/addmeal"
 const SERVER_MY_MEALPLANS = "https://lose-weight.herokuapp.com/mealplans.json"
@@ -44,7 +43,11 @@ class MealPlanner extends Component {
   }
 
   componentDidMount() {
-    this.fetchMealPlans()
+    const mealPoll = () => {
+      this.fetchMealPlans()
+      setTimeout(mealPoll, 500);
+    }
+    mealPoll();
   }
 
   fetchMealPlans() {
@@ -153,6 +156,7 @@ class MealPlanner extends Component {
          })
   }
 
+
   _onClick(day, meal, e){
     const id = e.target.id;
     const targetId = document.getElementById(id);
@@ -185,7 +189,6 @@ class MealPlanner extends Component {
               } )
     }
 
-    window.location.reload()
 
   }
 
@@ -238,8 +241,10 @@ class MealPlanner extends Component {
           <td id="SaturdayDinner" onClick={this._onClick.bind(this, 'Saturday', 'Dinner')}>{this.state.SaturdayDinner}</td>
           </tr>
         </tbody>
-
       </table>
+
+
+
     );
   }
 };

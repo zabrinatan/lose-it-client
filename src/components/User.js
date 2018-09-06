@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Header from './Header';
 
@@ -43,7 +42,7 @@ class User extends Component {
               <h3>User Details</h3>
               <p> Email: {item.email}</p>
               <p> First Name: {item.first_name} </p>
-              <p> Last_Name: {item.last_name}</p>
+              <p> Last Name: {item.last_name}</p>
               <p> Weight(kg): {item.weight} kg</p>
               <p> Height(m): {item.height} m</p>
               <p> Target weight(kg):{item.target_weight} kg</p>
@@ -59,7 +58,7 @@ class User extends Component {
 
             </div>
             <div id='edit-profile-button'>
-            <a href = "/#/user/edit"><button>Edit Profile </button></a>
+            <a href = "/lose-it-client/#/user/editpage"><button>Edit Profile </button></a>
             </div>
 
 

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Header from './Header'
 import MealPlanner from './MealPlanner'
 import RecipeModal from './RecipeModal'
-
+//
 // const SERVER_MEALPLAN = "http://localhost:3000/mealplans/addmeal"
 // const SERVER_MY_RECIPES = "http://localhost:3000/recipes.json"
 // const SERVER_MY_MEALPLANS = "http://localhost:3000/mealplans.json"
@@ -63,7 +62,6 @@ _handleClick = (label, e ) => {
 
 onRecipeClick(e){
   console.log(e.target.id)
-  // document.getElementById("result-list").innerHTML = ""
   this.setState({
     currentRecipe: e.target.id,
      modalIsOpen: true
@@ -79,11 +77,20 @@ onRecipeClick(e){
     })
   }
 
+
+
   render() {
     const { favourites, currentRecipe } = this.state
     return (
       <div id="myRecipesPage">
         <Header />
+        <div id='mealplan-intro'>
+        <ol>
+          <li>1.   Select a recipe from the list </li>
+          <li>2.   Click the square of the desired day and meal for the recipe</li>
+          <li>3.   Click the square again if you want to remove that recipe </li>
+          </ol>
+        </div>
 
         <div className="container">
           <div id="side-bar">
@@ -100,14 +107,8 @@ onRecipeClick(e){
           modalIsOpen={this.state.modalIsOpen}
           currentRecipe={this.state.currentRecipe}
         />
+        <div>
 
-        <div id='mealplan-intro'>
-        <h4>Quick Instructions</h4>
-        <ol>
-          <li>1.   Select a recipe from the list </li>
-          <li>2.   Click the square of the desired day and meal for the recipe</li>
-          <li>3.   Click the square again if you want to remove that recipe </li>
-          </ol>
         </div>
       </div>
     )

@@ -9,7 +9,7 @@ class Nav extends Component {
   _logOut = () => {
     localStorage.clear()
     history.push({
-      pathname: '/',
+      pathname: '/lose-it-client/#/',
     })
     window.location.reload();
   }

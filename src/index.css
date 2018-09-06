@@ -136,10 +136,10 @@ text-align: center;
   /* background-color: #9D818950; */
   flex: 1;
   margin-right: 30px;
-  height: 82vh;
+  height: 79vh;
   display: inline-block;
   vertical-align: top;
-  margin-top: 4%;
+  /* margin-top: 4%; */
   overflow: scroll;
 }
 #side-bar p {
@@ -158,17 +158,25 @@ text-align: center;
 
 #mealplan-intro{
   text-align: center;
-  position: fixed;
-  bottom: 0;
+  /* position: fixed; */
+  /* bottom: 0; */
   display: block;
   width: 100vw;
-  background-color: #2EC4B6;
+  /* padding: 1% 0; */
+  /* background-color: rgba(0, 0, 0, 0.6); */
+  /* color: white; */
+  margin: 1% auto;
+
 }
 
 #mealplan-intro li {
 
   display: inline-block;
+  background-color: #9BC1BC;
+  padding: 1%;
   margin: 0 2%;
+  border-radius: 1em;
+
 }
 
 
@@ -244,7 +252,7 @@ nav a, nav p {
 #mealplan-table {
   flex: 5;
   background-color: #FDFFFC;
-  margin-top: 4%;
+  margin-top: 1%;
   border-radius: 1em;
   font-family: 'Comfortaa', cursive;
 

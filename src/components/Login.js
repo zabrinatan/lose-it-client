@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import _ from 'lodash'
 import Header from './Header'
-// const SERVER_URL = 'http://localhost:3000/'
-// const USER_SERVER_URL = 'http://localhost:3000/users'
+
 // const LOGIN_SERVER_URL = 'http://localhost:3000/user_token'
 // const USER_JSON_URL = 'http://localhost:3000/users.json'
-const SERVER_URL = 'https://lose-weight.herokuapp.com/'
-const USER_SERVER_URL = 'https://lose-weight.herokuapp.com/users'
+
 const LOGIN_SERVER_URL = 'https://lose-weight.herokuapp.com/user_token'
 const USER_JSON_URL = 'https://lose-weight.herokuapp.com/users.json'
 class Login extends Component {
@@ -28,12 +25,12 @@ class Login extends Component {
 
 _handleEmail(e){
   this.setState({
-    auth: { ... this.state.auth, email: e.target.value}
+    auth: {... this.state.auth, email: e.target.value}
   })
 }
 _handlePassword(e){
   this.setState({
-    auth: { ...this.state.auth, password: e.target.value}
+    auth: {...this.state.auth, password: e.target.value}
   })
 }
 
