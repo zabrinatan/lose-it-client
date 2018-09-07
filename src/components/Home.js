@@ -10,7 +10,7 @@ class Home extends Component {
       <Header />
       <div id="home-container">
         <h1 id="title"> Lose it!</h1>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/GnfTHsdTodA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe id="frame" src="https://www.youtube.com/embed/GnfTHsdTodA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
 
 

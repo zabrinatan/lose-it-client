@@ -434,6 +434,7 @@ iframe {
   font-family: 'Comfortaa', cursive;
   background-color: rgba(0, 0,0, 0.5);
   padding: 8vh 0 ;
+  height: 80vh;
 
 }
 #home-container h1 {
@@ -477,4 +478,9 @@ iframe {
 #login-form input[type="submit"]:hover, #login-form button:hover{
   text-decoration: underline;
   cursor: pointer;
+}
+
+#frame {
+  width: 50vw;
+  height: 50vh;
 }
