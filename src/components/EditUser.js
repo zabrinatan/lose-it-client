@@ -5,7 +5,7 @@ import Header from './Header';
 // const SERVER_USER_URL = "http://localhost:3000/users.json"
 // const SERVER_UPDATE_USER = "http://localhost:3000/users/update"
 const SERVER_USER_URL = "https://lose-weight.herokuapp.com/users.json"
-const SERVER_UPDATE_USER = "https://lose-weight.herokuapp.com/update"
+const SERVER_UPDATE_USER = "https://lose-weight.herokuapp.com/users/update"
 
 class EditUser extends Component {
   constructor(props){
