@@ -8,8 +8,6 @@ const SERVER_DESTROY_MEALPLAN = "https://lose-weight.herokuapp.com/mealplans"
 const SERVER_MEALPLAN = "https://lose-weight.herokuapp.com/mealplans/addmeal"
 const SERVER_MY_MEALPLANS = "https://lose-weight.herokuapp.com/mealplans.json"
 
-const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const meals = ["Breakfast", "Lunch", "Dinner"]
 
 class MealPlanner extends Component {
   constructor() {
@@ -20,10 +18,27 @@ class MealPlanner extends Component {
       meal: "",
       recipe: "",
       responseData: [],
-      mealPlans: [
-        {meal: "Breakfast", day: "Sunday", recipe: "Chicken Risotto"},
-        {meal: "Lunch", day: "Tuesday", recipe: "Orange Chicken"}
-      ]
+      SundayBreakfast: "",
+      MondayBreakfast: "",
+      TuesdayBreakfast: "",
+      WednesdayBreakfast: "",
+      ThursdayBreakfast: "",
+      FridayBreakfast: "",
+      SaturdayBreakfast: "",
+      SundayLunch: "",
+      MondayLunch: "",
+      TuesdayLunch: "",
+      WednesdayLunch: "",
+      ThursdayLunch: "",
+      FridayLunch: "",
+      SaturdayLunch: "",
+      SundayDinner: "",
+      MondayDinner: "",
+      TuesdayDinner: "",
+      WednesdayDinner: "",
+      ThursdayDinner: "",
+      FridayDinner: "",
+      SaturdayDinner: "",
     }
   }
 
@@ -177,50 +192,54 @@ class MealPlanner extends Component {
 
   }
 
-  checkRecipe(day, meal){
-    const mealObject = this.state.mealPlans.find((mealplan)=>{
-      return mealplan.meal=== meal && mealplan.day=== day
-    })
-
-    if(mealObject !== undefined ) {
-      return <td onClick={this._onClick.bind(this, day ,meal)}>{mealObject.recipe}
-      </td>
-    } else {
-      return <td/>
-    }
-
-  }
-
-  _renderTable = () => {
-    return meals.map((meal)=>{
-      return <tr>
-        <td>{meal}</td>
-          {days.map((day)=> {
-            return this.checkRecipe(day, meal)
-          })}
-      </tr>
-    })
-    }
-
-
   render() {
-
     return (
       <table id="mealplan-table">
         <thead>
         <tr>
         <th></th>
-
-        {days.map((day)=> {
-          return <th><h3>{day}</h3></th>
-        })}
-
+        <th><h3>Sunday</h3></th>
+        <th><h3>Monday</h3></th>
+        <th><h3>Tuesday</h3></th>
+        <th><h3>Wednesday</h3></th>
+        <th><h3>Thursday</h3></th>
+        <th><h3>Friday</h3></th>
+        <th><h3>Saturday</h3></th>
         </tr>
         </thead>
         <tbody>
-            {this._renderTable()}
+          <tr>
+            <td><h3>Breakfast</h3></td>
+            <td id="SundayBreakfast" onClick={this._onClick.bind(this, 'Sunday', 'Breakfast')}>{this.state.SundayBreakfast}</td>
+            <td id="MondayBreakfast" onClick={this._onClick.bind(this, 'Monday', 'Breakfast')}>{this.state.MondayBreakfast}</td>
+            <td id="TuesdayBreakfast" onClick={this._onClick.bind(this, 'Tuesday', 'Breakfast')}>{this.state.TuesdayBreakfast}</td>
+            <td id="WednesdayBreakfast" onClick={this._onClick.bind(this, 'Wednesday', 'Breakfast')}>{this.state.WednesdayBreakfast}</td>
+            <td id="ThursdayBreakfast" onClick={this._onClick.bind(this, 'Thursday', 'Breakfast')}>{this.state.ThursdayBreakfast}</td>
+            <td id="FridayBreakfast" onClick={this._onClick.bind(this, 'Friday', 'Breakfast')}>{this.state.FridayBreakfast}</td>
+            <td id="7" onClick={this._onClick.bind(this, 'Saturday', 'Breakfast')}>{this.state.SaturdayBreakfast}</td>
 
+          </tr>
+          <tr>
+          <td><h3>Lunch</h3></td>
+          <td id="SundayLunch" onClick={this._onClick.bind(this, 'Sunday', 'Lunch')}>{this.state.SundayLunch}</td>
+          <td id="MondayLunch" onClick={this._onClick.bind(this, 'Monday', 'Lunch')}>{this.state.MondayLunch}</td>
+          <td id="TuesdayLunch" onClick={this._onClick.bind(this, 'Tuesday', 'Lunch')}>{this.state.TuesdayLunch}</td>
+          <td id="WednesdayLunch" onClick={this._onClick.bind(this, 'Wednesday', 'Lunch')}>{this.state.WednesdayLunch}</td>
+          <td id="ThursdayLunch" onClick={this._onClick.bind(this, 'Thursday', 'Lunch')}>{this.state.ThursdayLunch}</td>
+          <td id="FridayLunch" onClick={this._onClick.bind(this, 'Friday', 'Lunch')}>{this.state.FridayLunch}</td>
+          <td id="SaturdayLunch" onClick={this._onClick.bind(this, 'Saturday', 'Lunch')}>{this.state.SaturdayLunch}</td>
+          </tr>
 
+          <tr>
+          <td><h3>Dinner</h3></td>
+          <td id="SundayDinner" onClick={this._onClick.bind(this, 'Sunday', 'Dinner')}>{this.state.SundayDinner}</td>
+          <td id="MondayDinner" onClick={this._onClick.bind(this, 'Monday', 'Dinner')}>{this.state.MondayDinner}</td>
+          <td id="TuesdayDinner" onClick={this._onClick.bind(this, 'Tuesday', 'Dinner')}>{this.state.TuesdayDinner}</td>
+          <td id="WednesdayDinner" onClick={this._onClick.bind(this, 'Wednesday', 'Dinner')}>{this.state.WednesdayDinner}</td>
+          <td id="ThursdayDinner" onClick={this._onClick.bind(this, 'Thursday', 'Dinner')}>{this.state.ThursdayDinner}</td>
+          <td id="FridayDinner" onClick={this._onClick.bind(this, 'Friday', 'Dinner')}>{this.state.FridayDinner}</td>
+          <td id="SaturdayDinner" onClick={this._onClick.bind(this, 'Saturday', 'Dinner')}>{this.state.SaturdayDinner}</td>
+          </tr>
         </tbody>
       </table>
 
