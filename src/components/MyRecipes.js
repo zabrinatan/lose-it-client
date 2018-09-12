@@ -36,7 +36,6 @@ class MyRecipes extends Component {
              "Authorization": localStorage.getItem('jwt')
            }
     }).then((response)=>{
-      console.log(response.data)
       this.setState({
         favourites: response.data,
       })

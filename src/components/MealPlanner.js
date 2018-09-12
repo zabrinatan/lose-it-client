@@ -20,10 +20,7 @@ class MealPlanner extends Component {
       meal: "",
       recipe: "",
       responseData: [],
-      mealPlans: [
-        {meal: "Breakfast", day: "Sunday", recipe: "Chicken Risotto"},
-        {meal: "Lunch", day: "Tuesday", recipe: "Orange Chicken"}
-      ]
+      mealPlans: []
     }
   }
 
@@ -33,6 +30,7 @@ class MealPlanner extends Component {
       setTimeout(mealPoll, 500);
     }
     mealPoll();
+
   }
 
   fetchMealPlans() {
@@ -41,105 +39,13 @@ class MealPlanner extends Component {
            }
          }).then((response)=> {
            let data = response.data
-           data.map((item)=> {
-             if(item.meal === "Breakfast"){
-               if(item.day === "Sunday"){
-
-                 this.setState ({
-                   SundayBreakfast: item.recipe
-                 })
-               }else if(item.day === "Monday"){
-                 this.setState ({
-                   MondayBreakfast: item.recipe
-                 })
-               }else if (item.day === "Tuesday"){
-                 this.setState ({
-                   TuesdayBreakfast: item.recipe
-                 })
-               }else if (item.day === "Wednesday") {
-                 this.setState ({
-                   WednesdayBreakfast: item.recipe
-                 })
-               }else if (item.day === "Thursday"){
-                 this.setState ({
-                   ThursdayBreakfast: item.recipe
-                 })
-               }else if (item.day === "Friday"){
-                 this.setState ({
-                   FridayBreakfast: item.recipe
-                 })
-               }else if (item.day === "Saturday"){
-                 this.setState ({
-                   SaturdayBreakfast: item.recipe
-                 })
-               }
-             }else if (item.meal === "Lunch"){
-               if(item.day === "Sunday"){
-                 this.setState ({
-                   SundayLunch: item.recipe
-                 })
-               }else if(item.day === "Monday"){
-                 this.setState ({
-                   MondayLunch: item.recipe
-                 })
-               }else if (item.day === "Tuesday"){
-                 this.setState ({
-                   TuesdayLunch: item.recipe
-                 })
-               }else if (item.day === "Wednesday") {
-                 this.setState ({
-                   WednesdayLunch: item.recipe
-                 })
-               }else if (item.day === "Thursday"){
-                 this.setState ({
-                   ThursdayLunch: item.recipe
-                 })
-               }else if (item.day === "Friday"){
-                 this.setState ({
-                   FridayLunch: item.recipe
-                 })
-               }else if (item.day === "Saturday"){
-                 this.setState ({
-                   SaturdayLunch: item.recipe
-                 })
-               }
-
-             }else if (item.meal === "Dinner") {
-               if(item.day === "Sunday"){
-                 this.setState ({
-                   SundayDinner: item.recipe
-                 })
-               }else if(item.day === "Monday"){
-                 this.setState ({
-                   MondayDinner: item.recipe
-                 })
-               }else if (item.day === "Tuesday"){
-                 this.setState ({
-                   TuesdayDinner: item.recipe
-                 })
-               }else if (item.day === "Wednesday") {
-                 this.setState ({
-                   WednesdayDinner: item.recipe
-                 })
-               }else if (item.day === "Thursday"){
-                 this.setState ({
-                   ThursdayDinner: item.recipe
-                 })
-               }else if (item.day === "Friday"){
-                 this.setState ({
-                   FridayDinner: item.recipe
-                 })
-               }else if (item.day === "Saturday"){
-                 this.setState ({
-                   SaturdayDinner: item.recipe
-                 })
-               }
+          this.setState({
+              mealPlans: data.map((item)=> { return {meal: item.meal, day: item.day, recipe: item.recipe}})
+            })
+          })
              }
-             }
-           )
 
-         })
-  }
+
 
 
   _onClick(day, meal, e){
@@ -173,8 +79,6 @@ class MealPlanner extends Component {
                      }
               } )
     }
-
-
   }
 
   checkRecipe(day, meal){
@@ -183,10 +87,10 @@ class MealPlanner extends Component {
     })
 
     if(mealObject !== undefined ) {
-      return <td onClick={this._onClick.bind(this, day ,meal)}>{mealObject.recipe}
+      return <td id={day + meal} onClick={this._onClick.bind(this, day ,meal)}>{mealObject.recipe}
       </td>
     } else {
-      return <td/>
+      return <td id={day + meal}></td>
     }
 
   }
@@ -219,7 +123,6 @@ class MealPlanner extends Component {
         </thead>
         <tbody>
             {this._renderTable()}
-
 
         </tbody>
       </table>
