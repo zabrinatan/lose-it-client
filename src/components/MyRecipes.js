@@ -60,7 +60,6 @@ _handleClick = (label, e ) => {
 }
 
 onRecipeClick(e){
-  console.log(e.target.id)
   this.setState({
     currentRecipe: e.target.id,
      modalIsOpen: true
@@ -84,11 +83,11 @@ onRecipeClick(e){
       <div id="myRecipesPage">
         <Header />
         <div id='mealplan-intro'>
-        <ol>
-          <li>1.   Select a recipe from the list </li>
-          <li>2.   Click the square of the desired day and meal for the recipe</li>
-          <li>3.   Click the square again if you want to remove that recipe </li>
-          </ol>
+        <ul>
+          <li>Select a recipe from the list </li>
+          <li>Click the square of the desired day and meal for the recipe</li>
+          <li>Click the square again if you want to remove that recipe </li>
+          </ul>
         </div>
 
         <div className="container">

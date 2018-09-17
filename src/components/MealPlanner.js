@@ -51,12 +51,11 @@ class MealPlanner extends Component {
   _onClick(day, meal, e){
     const id = e.target.id;
     const targetId = document.getElementById(id);
-
+    console.log(this.props.recipe);
     this.setState({
       meal: meal,
       day: day
     })
-
     if (this.props.recipe) {
       axios.post(SERVER_MEALPLAN, {
         meal: meal,
@@ -87,10 +86,10 @@ class MealPlanner extends Component {
     })
 
     if(mealObject !== undefined ) {
-      return <td id={day + meal} onClick={this._onClick.bind(this, day ,meal)}>{mealObject.recipe}
+      return <td id={day + meal} onClick={this._onClick.bind(this, day, meal)}>{mealObject.recipe}
       </td>
     } else {
-      return <td id={day + meal}></td>
+      return <td id={day + meal} onClick={this._onClick.bind(this, day, meal)}></td>
     }
 
   }
