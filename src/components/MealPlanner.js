@@ -5,6 +5,7 @@ const SERVER_DESTROY_MEALPLAN = "https://lose-weight.herokuapp.com/mealplans"
 const SERVER_MEALPLAN = "https://lose-weight.herokuapp.com/mealplans/addmeal"
 const SERVER_MY_MEALPLANS = "https://lose-weight.herokuapp.com/mealplans.json"
 
+
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const meals = ["Breakfast", "Lunch", "Dinner"]
 
@@ -21,6 +22,7 @@ class MealPlanner extends Component {
   }
 
   componentDidMount() {
+    //fetches mealplans from database every 500ms to update the mealplan table
     const mealPoll = () => {
       this.fetchMealPlans()
       setTimeout(mealPoll, 500);
@@ -50,6 +52,7 @@ class MealPlanner extends Component {
     })
 
     if (this.props.recipe) {
+      //if the user selects the recipe from the modal, send the recipe to the database
       axios.post(SERVER_MEALPLAN, {
         meal: meal,
         day: day,
@@ -60,7 +63,7 @@ class MealPlanner extends Component {
              }
       })
     }
-
+    // if the td of the table is not empty and it has been clicked, clear the recipe
     if (targetId.innerHTML !== "") {
       axios.post(SERVER_DESTROY_MEALPLAN, {
             meal: meal,
@@ -74,6 +77,7 @@ class MealPlanner extends Component {
   }
 
   checkRecipe(day, meal){
+    // finds out if there is an existing recipe in the state
     const mealObject = this.state.mealPlans.find((mealplan)=>{
       return mealplan.meal=== meal && mealplan.day=== day
     })
