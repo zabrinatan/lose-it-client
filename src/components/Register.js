@@ -81,16 +81,16 @@ _handleSubmit(e) {
   render(){
     return (
       <div>
-      <Header />
+        <Header />
         <div id="login-form">
-      <form onSubmit = {this._handleSubmit}>
-        <h2>Register</h2>
-      <input name="user_name"type="email" placeholder="Email" onChange = {this._handleEmailInput} value = {this.state.user.email} required autoFocus />
-      <input type="password" placeholder="Password" onChange={this._handlePasswordInput} value={this.state.user.password} required />
-      <input type="password" placeholder="confirm password" required  onChange={this._handlePasswordConfirm} value={this.state.user.password_confirmation} required/>
-      <button type="submit" name="signup" disabled={this.state.form_disabled}>Sign Up</button>
-      </form>
-      </div>
+          <form onSubmit = {this._handleSubmit}>
+            <h2>Register</h2>
+            <input name="user_name"type="email" placeholder="Email" onChange = {this._handleEmailInput} value = {this.state.user.email} required autoFocus />
+            <input type="password" placeholder="Password" onChange={this._handlePasswordInput} value={this.state.user.password} required />
+            <input type="password" placeholder="confirm password" required  onChange={this._handlePasswordConfirm} value={this.state.user.password_confirmation} required/>
+            <button type="submit" name="signup" disabled={this.state.form_disabled}>Sign Up</button>
+          </form>
+        </div>
       </div>
     )
   }

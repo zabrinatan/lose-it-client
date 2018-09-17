@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-// const SERVER_DESTROY_MEALPLAN = "http://localhost:3000/mealplans"
-// const SERVER_MEALPLAN = "http://localhost:3000/mealplans/addmeal"
-// const SERVER_MY_MEALPLANS = "http://localhost:3000/mealplans.json"
 const SERVER_DESTROY_MEALPLAN = "https://lose-weight.herokuapp.com/mealplans"
 const SERVER_MEALPLAN = "https://lose-weight.herokuapp.com/mealplans/addmeal"
 const SERVER_MY_MEALPLANS = "https://lose-weight.herokuapp.com/mealplans.json"
@@ -14,7 +11,6 @@ const meals = ["Breakfast", "Lunch", "Dinner"]
 class MealPlanner extends Component {
   constructor() {
     super()
-
     this.state = {
       day: "",
       meal: "",
@@ -30,7 +26,6 @@ class MealPlanner extends Component {
       setTimeout(mealPoll, 500);
     }
     mealPoll();
-
   }
 
   fetchMealPlans() {
@@ -43,7 +38,7 @@ class MealPlanner extends Component {
               mealPlans: data.map((item)=> { return {meal: item.meal, day: item.day, recipe: item.recipe}})
             })
           })
-             }
+  }
 
 
 
@@ -51,11 +46,12 @@ class MealPlanner extends Component {
   _onClick(day, meal, e){
     const id = e.target.id;
     const targetId = document.getElementById(id);
-    console.log(this.props.recipe);
+
     this.setState({
       meal: meal,
       day: day
     })
+
     if (this.props.recipe) {
       axios.post(SERVER_MEALPLAN, {
         meal: meal,
@@ -103,27 +99,26 @@ class MealPlanner extends Component {
           })}
       </tr>
     })
-    }
+  }
 
 
   render() {
-
     return (
       <table id="mealplan-table">
         <thead>
-        <tr>
-        <th></th>
+          <tr>
+            <th></th>
 
-        {days.map((day)=> {
-          return <th><h3>{day}</h3></th>
-        })}
+            {days.map((day)=> {
+              return <th><h3>{day}</h3></th>
+            })}
 
-        </tr>
+          </tr>
         </thead>
-        <tbody>
+          <tbody>
             {this._renderTable()}
 
-        </tbody>
+          </tbody>
       </table>
 
 

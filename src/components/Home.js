@@ -7,13 +7,11 @@ class Home extends Component {
   render() {
     return(
       <div>
-      <Header />
-      <div id="home-container">
-        <h1 id="title"> Lose it!</h1>
-        <iframe id="frame" src="https://www.youtube.com/embed/GnfTHsdTodA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </div>
-
-
+        <Header />
+        <div id="home-container">
+          <h1 id="title"> Lose it!</h1>
+          <iframe id="frame" src="https://www.youtube.com/embed/GnfTHsdTodA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
       </div>
     );
   }

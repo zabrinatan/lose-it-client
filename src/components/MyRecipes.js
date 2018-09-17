@@ -3,15 +3,12 @@ import axios from 'axios';
 import Header from './Header'
 import MealPlanner from './MealPlanner'
 import RecipeModal from './RecipeModal'
-//
-// const SERVER_MEALPLAN = "http://localhost:3000/mealplans/addmeal"
-// const SERVER_MY_RECIPES = "http://localhost:3000/recipes.json"
-// const SERVER_MY_MEALPLANS = "http://localhost:3000/mealplans.json"
-// const SERVER_DESTROY_MEALPLAN = "http://localhost:3000/mealplans"
+
 const SERVER_MEALPLAN = "https://lose-weight.herokuapp.com/mealplans/addmeal"
 const SERVER_MY_RECIPES = "https://lose-weight.herokuapp.com/recipes.json"
 const SERVER_MY_MEALPLANS = "https://lose-weight.herokuapp.com/mealplans.json"
 const SERVER_DESTROY_MEALPLAN = "https://lose-weight.herokuapp.com/mealplans"
+
 class MyRecipes extends Component {
   constructor() {
     super();
@@ -48,8 +45,6 @@ _onSubmit(e){
   e.preventDefault();
   const recipe = document.getElementById(e.target.id);
   const meal =recipe.getElementsByClassName('meal')
-
-
 }
 
 _handleClick = (label, e ) => {
@@ -63,10 +58,7 @@ onRecipeClick(e){
   this.setState({
     currentRecipe: e.target.id,
      modalIsOpen: true
-
   })
-
-
 }
 
   _renderSideBar = (favourites) => {
@@ -75,18 +67,16 @@ onRecipeClick(e){
     })
   }
 
-
-
   render() {
     const { favourites, currentRecipe } = this.state
     return (
       <div id="myRecipesPage">
         <Header />
         <div id='mealplan-intro'>
-        <ul>
-          <li>Select a recipe from the list </li>
-          <li>Click the square of the desired day and meal for the recipe</li>
-          <li>Click the square again if you want to remove that recipe </li>
+          <ul>
+            <li>Select a recipe from the list </li>
+            <li>Click the square of the desired day and meal for the recipe</li>
+            <li>Click the square again if you want to remove that recipe </li>
           </ul>
         </div>
 
@@ -105,9 +95,7 @@ onRecipeClick(e){
           modalIsOpen={this.state.modalIsOpen}
           currentRecipe={this.state.currentRecipe}
         />
-        <div>
-
-        </div>
+  
       </div>
     )
   }

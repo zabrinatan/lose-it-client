@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Header from './Header';
 
-// const SERVER_USER_URL = "http://localhost:3000/users.json";
 const SERVER_USER_URL = "https://lose-weight.herokuapp.com/users.json";
 
 class User extends Component {
-
 
   constructor(props){
     super(props);
@@ -47,22 +45,19 @@ class User extends Component {
               <p> Height(m): {item.height} m</p>
               <p> Target weight(kg):{item.target_weight} kg</p>
               <h3>BMI</h3>
-                <p>Calculated BMI: {(parseFloat(item.weight) / (parseFloat(item.height) * parseFloat(item.height))).toFixed(2) } </p>
+              <p>Calculated BMI: {(parseFloat(item.weight) / (parseFloat(item.height) * parseFloat(item.height))).toFixed(2) } </p>
             </div>
             <div id="daily-limits">
-            <h3>Daily Limits</h3>
-              <p>Daily Calories Limit: {item.calories} cal</p>
-              <p>Daily Proteins Limit: {item.proteins} g</p>
-              <p>Daily Fats Limit: {item.fats} g</p>
-              <p>Daily Carbs Limit: {item.carbs} g</p>
-
+              <h3>Daily Limits</h3>
+                <p>Daily Calories Limit: {item.calories} cal</p>
+                <p>Daily Proteins Limit: {item.proteins} g</p>
+                <p>Daily Fats Limit: {item.fats} g</p>
+                <p>Daily Carbs Limit: {item.carbs} g</p>
             </div>
             <div id='edit-profile-button'>
-            <a href = "/lose-it-client/#/user/editpage"><button>Edit Profile </button></a>
+              <a href = "/lose-it-client/#/user/editpage"><button>Edit Profile </button></a>
             </div>
-
-
-              </div>
+          </div>
           }
         })}
       </div>
