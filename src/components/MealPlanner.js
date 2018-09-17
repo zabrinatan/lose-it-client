@@ -40,9 +40,6 @@ class MealPlanner extends Component {
           })
   }
 
-
-
-
   _onClick(day, meal, e){
     const id = e.target.id;
     const targetId = document.getElementById(id);
@@ -120,9 +117,6 @@ class MealPlanner extends Component {
 
           </tbody>
       </table>
-
-
-
     );
   }
 };
